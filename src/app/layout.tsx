@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import Providers from '@/components/Providers';
+import SiteHeader from '@/components/SiteHeader';
 import '@/globals.css';
 
 const inter = Inter({
@@ -23,13 +24,18 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning
     >
-      <link
-        rel='icon'
-        href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>'
-      />
-      <head></head>
+      {/* 
+        This <head> block exists to hold the sample favicon. In production, remove the <head> and place your favicon .ico file in the /app directory
+      */}
+      <head>
+        <link
+          rel='icon'
+          href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>'
+        />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <Providers>
+          <SiteHeader />
           {/* <Suspense> */}
 
           {children}

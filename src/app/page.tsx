@@ -2,8 +2,6 @@ import Link from 'next/link';
 
 import { getServerSession } from 'next-auth';
 
-import AuthButton from '@/components/AuthButton';
-import ModeToggle from '@/components/ModeToggle';
 import { Button } from '@/components/ui/button';
 
 export default async function Home() {
@@ -14,9 +12,6 @@ export default async function Home() {
       <Button asChild>
         <Link href='/dashboard'>Dashboard</Link>
       </Button>
-
-      <ModeToggle />
-      <AuthButton />
     </div>
   );
 }

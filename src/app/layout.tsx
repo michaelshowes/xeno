@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
 
 import Providers from '@/components/Providers';
-import SiteHeader from '@/components/SiteHeader';
 import '@/globals.css';
 
 const inter = Inter({
@@ -36,7 +35,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <Providers>
-          <SiteHeader />
+          {/* <SiteHeader /> */}
           <Suspense>{children}</Suspense>
         </Providers>
       </body>

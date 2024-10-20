@@ -5,13 +5,10 @@ import { getUsers } from '@/db/queries/users';
 import requireAuth from '@/utils/requireAuth';
 
 export default async function Dashboard() {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
   await requireAuth();
 
   const session = (await getServerSession(authOptions))!;
   const users = await getUsers();
-
-  console.log(users);
 
   return (
     <div>

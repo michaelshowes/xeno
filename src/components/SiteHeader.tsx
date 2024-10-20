@@ -1,10 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import AuthButton from './AuthButton';
+import { getServerSession } from 'next-auth';
+
+import { authOptions } from '@/config/auth';
+import SignInButton from '@/features/auth/components/SignInButton';
+import UserButton from '@/features/auth/components/UserButton';
+
 import ModeToggle from './ModeToggle';
 
-export default function SiteHeader() {
+export default async function SiteHeader() {
+  const session = await getServerSession(authOptions);
+
   return (
     <header className={'flex gap-x-6'}>
       <Link
@@ -22,7 +29,7 @@ export default function SiteHeader() {
         <Link href='/dashboard'>Dashboard</Link>
       </nav>
       <ModeToggle />
-      <AuthButton />
+      {session ? <UserButton /> : <SignInButton />}
     </header>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Suspense } from 'react';
 
 import Providers from '@/components/Providers';
 import SiteHeader from '@/components/SiteHeader';
@@ -36,10 +37,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Providers>
           <SiteHeader />
-          {/* <Suspense> */}
-
-          {children}
-          {/* </Suspense> */}
+          <Suspense>{children}</Suspense>
         </Providers>
       </body>
     </html>

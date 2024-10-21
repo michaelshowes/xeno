@@ -13,7 +13,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 
 export default function UserButton() {
-  const { data, status } = useSession();
+  const { data } = useSession();
   const user = data?.user;
 
   if (!user) {

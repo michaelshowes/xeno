@@ -1,7 +1,12 @@
+import SiteHeader from '@/components/SiteHeader';
+
 export default function Home() {
   return (
-    <div>
-      <h1 className={'text-3xl uppercase font-bold'}>Home Page</h1>
-    </div>
+    <>
+      <SiteHeader />
+      <div>
+        <h1 className={'text-3xl uppercase font-bold'}>Home Page</h1>
+      </div>
+    </>
   );
 }

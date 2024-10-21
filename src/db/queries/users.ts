@@ -22,3 +22,12 @@ export const getUserById = async (id: string) => {
     console.error(error);
   }
 };
+
+export const getUserByEmail = async (email: string) => {
+  try {
+    const result = await db.select().from(users).where(eq(users.email, email));
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};

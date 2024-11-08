@@ -6,9 +6,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <SiteHeader />
-      <main>{children}</main>;
-    </>
+    <html>
+      <body className={'p-4 max-w-[1600px] mx-auto'}>
+        <div>
+          <SiteHeader />
+          <main>{children}</main>
+        </div>
+      </body>
+    </html>
   );
 }

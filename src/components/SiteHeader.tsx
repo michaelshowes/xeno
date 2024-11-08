@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { auth } from '@/auth';
@@ -14,14 +13,9 @@ export default async function SiteHeader() {
     <header className={'flex gap-x-6'}>
       <Link
         href='/'
-        className={'mr-auto'}
+        className={'mr-auto font-bold text-2xl text-primary'}
       >
-        <Image
-          src={'/images/logo-full.svg'}
-          alt={'logo'}
-          width={200}
-          height={50}
-        />
+        Xeno
       </Link>
       <nav>
         <Link href='/dashboard'>Dashboard</Link>

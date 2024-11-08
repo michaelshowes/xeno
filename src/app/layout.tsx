@@ -37,7 +37,12 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Providers>
           <Toaster />
-          <Suspense>{children}</Suspense>
+          <Suspense>
+            <div className={'mx-auto flex flex-col gap-4'}>
+              {/* <SiteHeader /> */}
+              <main>{children}</main>
+            </div>
+          </Suspense>
         </Providers>
       </body>
     </html>
